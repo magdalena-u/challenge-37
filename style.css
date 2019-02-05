@@ -1,0 +1,505 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+.body {
+    font-family: 'Lato', sans-serif;
+    position: relative;
+}
+
+/* style of main elements on page*/
+
+button {
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    height: 18%;
+    min-height: 35px;
+    width: 40%;
+    background-color: rgb(188, 46, 58);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+}
+
+button:hover {
+    background-image: linear-gradient(rgb(188, 46, 58), rgb(100, 36, 45));
+}
+
+h1,
+h3 {
+    color: rgb(73, 73, 73);
+}
+
+h1 {
+    font-family: 'Coda Caption', sans-serif;
+    text-align: center;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:href {
+    color: red;
+}
+
+a:active {
+    color: yellow;
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+
+
+/*style of main menu*/
+
+.main_nav {
+    position: fixed;
+    display: block;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-size: 2em;
+    line-height: 2em;
+    width: 100vw;
+    height: 10vh;
+    background: rgb(73, 73, 73);
+    color: white;
+    z-index: 2;
+}
+
+.nav_label {
+    display: block;
+    text-align: center;
+}
+
+.nav_content {
+    height: 100vh;
+    display: none;
+    background-color: #fff;
+    color: black;
+}
+
+.nav_content li {
+    text-align: center;
+}
+
+.active {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* main content */
+main {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-top: 10vh;
+}
+
+.header,
+.who,
+.what,
+.how,
+.team,
+.clients,
+.contact {
+    /* height: 100%; */
+    padding: 1em;
+}
+
+/* header */
+.header {
+    position: relative;
+    height: 30vh;
+    background-image: url(images/header_bg.png);
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.header button {
+    background-color: #fff;
+    color: black;
+    position: absolute;
+    top: 75%;
+    left: 15%;
+}
+
+.header button a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.header button:hover {
+    background-image: linear-gradient(rgb(244, 244, 244), rgb(66, 66, 66));
+}
+
+.model {
+    position: absolute;
+    background-image: url(images/header_model.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    top: 10%;
+    left: 50%;
+}
+
+/* who we are */
+
+.who {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    /* height: 200%; */
+    justify-content: center;
+}
+
+.who_text {
+    display: flex;
+    flex-direction: column;
+}
+
+.who_img {
+    background-image: url(images/who_laptop.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 55vw;
+    height: 30vw;
+}
+
+.who_bg {
+    position: absolute;
+    background-color: rgb(23, 23, 23);
+    width: 80vw;
+    height: 80vw;
+    transform: rotate(45deg);
+    top: -80%;
+    left: 40%;
+    z-index: -1;
+}
+
+/* what we do */
+.what {
+    background-color: rgb(245, 245, 245);
+}
+
+.what_container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.what_item {
+    display: flex;
+    width: 50%;
+}
+
+.what_item div:nth-child(1) {
+    position: relative;
+    background-color: rgb(188, 46, 58);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+.what .what_item i {
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 13px;
+}
+
+.what_item div:nth-child(2) {
+    padding-left: 0.5em;
+    padding-bottom: 0.5em;
+    width: 80%;
+}
+
+/* how we works */
+.how {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.how_text {
+    text-align: center;
+}
+
+.how1,
+.how2,
+.how3 {
+    display: inline-block;
+    background-color: black;
+    width: 20vw;
+    height: 20vw;
+    transform: skewX(-25deg);
+    overflow: hidden;
+}
+
+.how1::before,
+.how2::before,
+.how3::before {
+    content: "";
+    display: block;
+    width: 35vw;
+    height: 35vw;
+    background-size: cover;
+    transform: skewX(25deg);
+}
+
+.how1::before {
+    background-image: url(images/how1.png);
+}
+
+.how2::before {
+    background-image: url(images/how2.jpg);
+}
+
+.how3::before {
+    background-image: url(images/how_img3.png);
+}
+
+/* our creative team */
+.team {
+    background-color: rgb(245, 245, 245);
+}
+
+.team_container {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50vw;
+    padding-top: 6vh;
+}
+
+/* arrow */
+.arrow1,
+.arrow2 {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.arrow1 {
+    border-right: 20px solid rgb(66, 66, 64);
+}
+
+.arrow2 {
+    border-left: 20px solid rgb(66, 66, 64);
+}
+
+/* team photos */
+
+.team1::before {
+    content: "";
+    display: block;
+    width: 50vw;
+    height: 50vw;
+    background-image: url(images/team1.png);
+    background-size: cover;
+    transform: rotate(-45deg) translateY(-35px);
+}
+
+.team1 {
+    width: 35vw;
+    height: 35vw;
+    border: solid 10px #fff;
+    box-shadow: 1px 1px 15px 5px rgb(0, 0, 0, 0.2);
+    transform: rotate(45deg);
+    overflow: hidden;
+    margin-bottom: 5vh;
+}
+
+.team_h1,
+.team_h3 {
+    position: absolute;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+
+}
+
+.team_h1 {
+    bottom: 3vh;
+    left: 50%;
+    background-color: rgb(0, 0, 0);
+    width: 35vw;
+    height: 4vh;
+    transform: skewX(45deg) translateX(-50%);
+
+}
+
+.team_h3 {
+    bottom: 0;
+    left: 50%;
+    background-color: rgb(188, 46, 58);
+    width: 25vw;
+    height: 3.5vh;
+    transform: skewX(45deg) translateX(-30%);
+}
+
+
+.team_h1 p,
+.team_h3 p {
+    text-align: center;
+    transform: skewX(-45deg)
+}
+
+
+/* what client says */
+
+.client_container {
+    display: flex;
+    margin-top: 2.5vh;
+}
+
+.client_container span {
+    width: 50%;
+}
+
+
+.client_main_img::before {
+    content: "";
+    display: block;
+    width: 40vw;
+    height: 40vw;
+    background-image: url(images/client1.png);
+    background-size: cover;
+    transform: rotate(-45deg) translateY(-35px);
+}
+
+.client_main_img {
+    width: 25vw;
+    height: 25vw;
+    border: solid 10px #fff;
+    box-shadow: 1px 1px 15px 1px rgb(0, 0, 0, 0.2);
+    transform: rotate(45deg);
+    margin: 10vw;
+    overflow: hidden;
+}
+
+.client_img {
+    position: relative;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+.client_img1,
+.client_img2,
+.client_img3 {
+    width: 10vw;
+    height: 10vw;
+    border: solid 5px #fff;
+    box-shadow: 1px 1px 15px 1px rgb(0, 0, 0, 0.2);
+    transform: rotate(45deg);
+    overflow: hidden;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+}
+
+.client_img1::before,
+.client_img2::before,
+.client_img3::before {
+    content: "";
+    display: block;
+    width: 15vw;
+    height: 15vw;
+    background-size: cover;
+    transform: rotate(-45deg) translateY(-12px);
+}
+
+
+.client_img1::before {
+    background-image: url(images/client1.png);
+}
+
+.client_img2::before {
+    background-image: url(images/team2.png);
+}
+
+.client_img3::before {
+    background-image: url(images/team3.png);
+}
+
+/* contact */
+
+.contact::before {
+    content: "";
+    background-color: rgb(23, 23, 23);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100vw;
+    height: 100%;
+    z-index: -2;
+}
+
+.contact {
+    position: relative;
+}
+
+.contact::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100vw;
+    height: 100%;
+    background-image: url(images/contact_img.png);
+    background-size: cover;
+    background-position: 50% 50%;
+    z-index: -1;
+    opacity: 0.15;
+}
+
+
+
+.contact_main {
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5vh;
+}
+
+.contact_main>div {
+    padding-top: 3vh;
+}
+
+.contact_main>div>p {
+    text-align: center;
+}
+
+.contact_main>div>span {
+    display: block;
+}
+
+.contact_main>div>i::before {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+
+.contact_icon {
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+}
