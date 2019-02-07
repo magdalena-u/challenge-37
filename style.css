@@ -9,6 +9,8 @@
     position: relative;
 }
 
+
+
 /* style of main elements on page*/
 
 button {
@@ -27,7 +29,7 @@ button {
 }
 
 button:hover {
-    background-image: linear-gradient(rgb(188, 46, 58), rgb(100, 36, 45));
+    background-color: rgb(100, 36, 45);
 }
 
 h1,
@@ -39,18 +41,11 @@ h1 {
     font-family: 'Coda Caption', sans-serif;
     text-align: center;
     font-size: 20px;
+    padding-bottom: 1em;
 }
 
 a {
     text-decoration: none;
-}
-
-a:href {
-    color: red;
-}
-
-a:active {
-    color: yellow;
 }
 
 a:visited {
@@ -111,9 +106,8 @@ main {
 .what,
 .how,
 .team,
-.clients,
+.client,
 .contact {
-    /* height: 100%; */
     padding: 1em;
 }
 
@@ -140,7 +134,11 @@ main {
 }
 
 .header button:hover {
-    background-image: linear-gradient(rgb(244, 244, 244), rgb(66, 66, 66));
+    background-color: rgb(66, 66, 66);
+}
+
+.header button a:hover {
+    color: white;
 }
 
 .model {
@@ -157,11 +155,11 @@ main {
 /* who we are */
 
 .who {
+    font-family: 'Lato', sans-serif;
     position: relative;
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
-    /* height: 200%; */
     justify-content: center;
 }
 
@@ -178,6 +176,7 @@ main {
     height: 30vw;
 }
 
+/* 
 .who_bg {
     position: absolute;
     background-color: rgb(23, 23, 23);
@@ -187,11 +186,12 @@ main {
     top: -80%;
     left: 40%;
     z-index: -1;
-}
+} */
 
 /* what we do */
 .what {
     background-color: rgb(245, 245, 245);
+    font-family: 'Lato', sans-serif;
 }
 
 .what_container {
@@ -362,6 +362,11 @@ main {
 
 /* what client says */
 
+.client {
+    font-family: 'Lato', sans-serif;
+    position: relative;
+}
+
 .client_container {
     display: flex;
     margin-top: 2.5vh;
@@ -393,7 +398,6 @@ main {
 }
 
 .client_img {
-    position: relative;
     width: 100vw;
     display: flex;
     justify-content: space-around;
@@ -440,7 +444,7 @@ main {
 
 .contact::before {
     content: "";
-    background-color: rgb(23, 23, 23);
+    background-color: black;
     position: absolute;
     top: 0;
     left: 0;
@@ -464,12 +468,10 @@ main {
     height: 100%;
     background-image: url(images/contact_img.png);
     background-size: cover;
-    background-position: 50% 50%;
+    background-position: 50% 15%;
     z-index: -1;
     opacity: 0.15;
 }
-
-
 
 .contact_main {
     color: #fff;
@@ -502,4 +504,237 @@ main {
     color: #fff;
     display: flex;
     justify-content: space-around;
+}
+
+/* @media for screen */
+
+@media screen and (min-width:450px) {
+
+    body {
+        margin: 0 auto;
+    }
+
+    .header,
+    .who,
+    .what,
+    .how,
+    .team,
+    .client,
+    .contact {
+        padding-left: 15vw;
+        padding-right: 15vw;
+        padding-top: 8vh;
+        padding-bottom: 10vh;
+    }
+
+    /* main element of page */
+
+    h1 {
+        font-size: 30px;
+    }
+
+    button {
+        margin-top: 4vh;
+        margin-bottom: 6vh;
+        width: 20%;
+    }
+
+    /*style of main menu*/
+    .main_nav {
+        display: none;
+    }
+
+    /* .nav_label {
+        display: none;
+    }
+
+    .nav_content {
+        position: absolute;
+        color: white;
+        background-color: none;
+        ;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .nav_content li {
+        display: inline-block;
+    } */
+
+    /* main content */
+    main {
+        padding-top: 0;
+    }
+
+    /* header */
+
+    .header {
+        height: 60vh;
+    }
+
+    .header button {
+        height: auto;
+    }
+
+    /* who we are */
+
+    .who {
+        justify-content: flex-start;
+    }
+
+    .who_text h1 {
+        text-align: left;
+    }
+
+    .who_text span {
+        display: block;
+        width: 50%;
+    }
+
+    .who_img {
+        position: absolute;
+        right: 0;
+        height: 60%;
+        width: 45%;
+        background-position: 0 0;
+    }
+
+    /* .who_text {
+        order: 1;
+    }
+
+    .who_img {
+        order: 3;
+    }
+
+    .who button {
+        order: 2;
+    } */
+
+    /* what we do */
+    .what_item {
+        width: 30%;
+        padding: 0.6em;
+        padding-bottom: 2em;
+    }
+
+    .what_item div:nth-child(1) {
+        width: 40px;
+        height: 40px;
+    }
+
+    .what .what_item i {
+        font-size: 20px;
+    }
+
+    /* how we works */
+
+    .how {
+        position: relative;
+        align-items: flex-start;
+        font-family: 'Lato', sans-serif;
+    }
+
+    .how_text,
+    .how_text>h1 {
+        text-align: left;
+    }
+
+    .how_text span {
+        display: block;
+        width: 25vw;
+    }
+
+    .how_img {
+        position: absolute;
+        right: -5%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .how1,
+    .how2,
+    .how3 {
+        margin: 20px;
+        width: 18vw;
+        height: 30vh;
+    }
+
+    /* what client says */
+
+
+    .client_main_img::before {
+        width: 30vw;
+        height: 30vw;
+        transform: rotate(-45deg) translateY(-25%);
+    }
+
+    .client_main_img {
+        width: 15vw;
+        height: 15vw;
+        margin: 10px;
+    }
+
+    .client_container span {
+        margin-left: 5vw;
+    }
+
+    .client_img {
+        position: absolute;
+        width: 40vw;
+        bottom: 20%;
+        right: 20%;
+    }
+
+    .client_img1,
+    .client_img2,
+    .client_img3 {
+        width: 5vw;
+        height: 5vw;
+    }
+
+    .client_img1::before,
+    .client_img2::before,
+    .client_img3::before {
+        width: 10vw;
+        height: 10vw;
+        transform: rotate(-45deg) translateY(-25%);
+    }
+
+    /* contact */
+
+    .contact_main {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .contact_main>div {
+        position: relative;
+        padding-left: 50px;
+    }
+
+    .contact_main>div>p {
+        text-align: left;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .contact_main>div>span {
+        font-size: 12px;
+    }
+
+    .contact_main>div>i::before {
+        left: 0;
+        transform: translate(0, 50%);
+        font-size: 30px;
+    }
+
+
+    .contact_icon {
+        font-size: 1.6em;
+        width: 40vw;
+        margin: 0 auto;
+        margin-bottom: 2em;
+    }
 }
