@@ -57,62 +57,61 @@ a:visited {
 
 .main_nav {
     position: fixed;
-    display: block;
     font-family: 'Lato', sans-serif;
     text-transform: uppercase;
     font-size: 2em;
     line-height: 2em;
     width: 100vw;
-    height: 10vh;
+    height: 2em;
     background: rgb(73, 73, 73);
-    color: white;
     z-index: 2;
 }
 
 .nav_label {
-    display: block;
     text-align: center;
+    color: #fff;
+    cursor: pointer;
 }
 
 .nav_content {
-    height: 100vh;
     display: none;
-    background-color: #fff;
-    color: black;
 }
 
-.nav_content li {
+.main_nav i {
+    display: block;
+}
+
+.main_nav li,
+.main_nav i {
     text-align: center;
+    color: black;
+    line-height: 2em;
+}
+
+.main_nav a:visited {
+    color: black;
 }
 
 .active {
     display: flex;
     flex-direction: column;
+    background-color: #fff;
+    height: 100vh;
 }
-
-.nav_content a {
-    text-decoration: none;
-}
-
-.nav_content a:visited {
-    text-decoration: none;
-    color: black;
-}
-
 
 /* main content */
 main {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    padding-top: 10vh;
+    padding-top: 2em;
 }
 
 .header,
 .who,
 .what,
 .how,
-.team,
+.creative_team,
 .client,
 .contact {
     padding: 1em;
@@ -166,13 +165,18 @@ main {
     position: relative;
     overflow: hidden;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .who_text {
     display: flex;
     flex-direction: column;
+}
+
+.who_text span {
+    text-align: center;
+    margin-bottom: 1em;
 }
 
 .who_img {
@@ -204,6 +208,7 @@ main {
 .what_container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .what_item {
@@ -333,7 +338,7 @@ main {
     width: 50vw;
     height: 50vw;
     background-size: cover;
-    transform: rotate(-45deg) translateY(-65px);
+    transform: rotate(-45deg) translateY(-90px);
 }
 
 .team_item1 .team::before {
@@ -455,7 +460,7 @@ main {
     width: 15vw;
     height: 15vw;
     background-size: cover;
-    transform: rotate(-45deg) translateY(-12px);
+    transform: rotate(-45deg) translateY(-20px);
 }
 
 
@@ -539,7 +544,7 @@ main {
 
 /* @media for screen */
 
-@media screen and (min-width:450px) {
+@media screen and (min-width:660px) {
 
     body {
         margin: 0 auto;
@@ -549,7 +554,7 @@ main {
     .who,
     .what,
     .how,
-    .team,
+    .creative_team,
     .client,
     .contact {
         padding-left: 15vw;
@@ -568,30 +573,46 @@ main {
         margin-top: 4vh;
         margin-bottom: 6vh;
         width: 20%;
+        min-width: 130px;
     }
 
     /*style of main menu*/
+
     .main_nav {
-        display: none;
+        position: absolute;
+        background-color: transparent;
+        color: white;
+        font-size: 1.2em;
+        width: 60vw;
+        right: 0;
+        top: 2vh;
     }
 
-    /* .nav_label {
+    .main_nav li,
+    .main_nav i {
+        text-align: center;
+        color: white;
+        line-height: 2em;
+    }
+
+    .main_nav a:visited {
+        color: white;
+    }
+
+
+    .nav_label {
         display: none;
     }
 
     .nav_content {
-        position: absolute;
-        color: white;
-        background-color: none;
-        ;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: block;
     }
 
-    .nav_content li {
-        display: inline-block;
-    } */
+    .nav_content ul {
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+    }
 
     /* main content */
     main {
@@ -611,7 +632,7 @@ main {
     /* who we are */
 
     .who {
-        justify-content: flex-start;
+        align-items: flex-start;
     }
 
     .who_text h1 {
@@ -626,9 +647,10 @@ main {
     .who_img {
         position: absolute;
         right: 0;
+        width: 40%;
         height: 60%;
-        width: 45%;
-        background-position: 0 0;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     /* what we do */
@@ -675,9 +697,16 @@ main {
     .how1,
     .how2,
     .how3 {
-        margin: 20px;
+        margin: 1vw;
         width: 18vw;
-        height: 30vh;
+        height: 100%;
+    }
+
+    .how1::before,
+    .how2::before,
+    .how3::before {
+        height: 20vw;
+        transform: skewX(25deg) translateX(-20%);
     }
 
     /* our creative team */
@@ -705,8 +734,8 @@ main {
     }
 
     .team::before {
-        width: 20vw;
-        height: 20vw;
+        width: 25vw;
+        height: 25vw;
     }
 
     .team {
@@ -720,11 +749,13 @@ main {
         bottom: 1.5vh;
         width: 10vw;
         height: 4vh;
+        min-width: 140px;
     }
 
     .team_h3 {
         width: 8vw;
         height: 2.5vh;
+        min-width: 90px;
     }
 
     .active_img {
@@ -819,5 +850,36 @@ main {
         width: 40vw;
         margin: 0 auto;
         margin-bottom: 2em;
+    }
+}
+
+@media screen and (min-width:660px) and (max-width:1150px) {
+
+    .header,
+    .who,
+    .what,
+    .how,
+    .creative_team,
+    .client,
+    .contact {
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+
+    /*style of main menu*/
+
+    .main_nav {
+        right: 50%;
+        transform: translateX(50%);
+        width: 90vw;
+    }
+
+    /* what client says*/
+    .client_container span {
+        width: 70%;
+    }
+
+    .client_img {
+        bottom: 10%;
     }
 }
