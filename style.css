@@ -9,8 +9,6 @@
     position: relative;
 }
 
-
-
 /* style of main elements on page*/
 
 button {
@@ -90,6 +88,15 @@ a:visited {
 .active {
     display: flex;
     flex-direction: column;
+}
+
+.nav_content a {
+    text-decoration: none;
+}
+
+.nav_content a:visited {
+    text-decoration: none;
+    color: black;
 }
 
 
@@ -273,17 +280,16 @@ main {
 }
 
 /* our creative team */
-.team {
+.creative_team {
     background-color: rgb(245, 245, 245);
 }
 
 .team_container {
-    position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 50vw;
     padding-top: 6vh;
+    padding-bottom: 6vh;
 }
 
 /* arrow */
@@ -293,6 +299,7 @@ main {
     height: 0;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
+    cursor: pointer;
 }
 
 .arrow1 {
@@ -305,19 +312,45 @@ main {
 
 /* team photos */
 
-.team1::before {
+.team_imgs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.active_img {
+    position: relative;
+}
+
+.first,
+.third {
+    display: none;
+}
+
+.team::before {
     content: "";
     display: block;
     width: 50vw;
     height: 50vw;
-    background-image: url(images/team1.png);
     background-size: cover;
-    transform: rotate(-45deg) translateY(-35px);
+    transform: rotate(-45deg) translateY(-65px);
 }
 
-.team1 {
-    width: 35vw;
-    height: 35vw;
+.team_item1 .team::before {
+    background-image: url(images/team1.png);
+}
+
+.team_item2 .team::before {
+    background-image: url(images/team2.png);
+}
+
+.team_item3 .team::before {
+    background-image: url(images/team3.png);
+}
+
+.team {
+    width: 25vw;
+    height: 25vw;
     border: solid 10px #fff;
     box-shadow: 1px 1px 15px 5px rgb(0, 0, 0, 0.2);
     transform: rotate(45deg);
@@ -340,7 +373,6 @@ main {
     width: 35vw;
     height: 4vh;
     transform: skewX(45deg) translateX(-50%);
-
 }
 
 .team_h3 {
@@ -376,25 +408,23 @@ main {
     width: 50%;
 }
 
-
-.client_main_img::before {
-    content: "";
-    display: block;
-    width: 40vw;
-    height: 40vw;
-    background-image: url(images/client1.png);
-    background-size: cover;
-    transform: rotate(-45deg) translateY(-35px);
-}
-
-.client_main_img {
+.client_main_container {
+    position: relative;
     width: 25vw;
     height: 25vw;
     border: solid 10px #fff;
     box-shadow: 1px 1px 15px 1px rgb(0, 0, 0, 0.2);
     transform: rotate(45deg);
-    margin: 10vw;
     overflow: hidden;
+    margin: 8vw;
+}
+
+.client_main_img {
+    width: 40vw;
+    height: 40vw;
+    background-image: url(images/client1.png);
+    background-size: cover;
+    transform: rotate(-45deg) translateY(-20%);
 }
 
 .client_img {
@@ -414,6 +444,7 @@ main {
     overflow: hidden;
     margin-top: 2.5vh;
     margin-bottom: 2.5vh;
+    cursor: pointer;
 }
 
 .client_img1::before,
@@ -600,18 +631,6 @@ main {
         background-position: 0 0;
     }
 
-    /* .who_text {
-        order: 1;
-    }
-
-    .who_img {
-        order: 3;
-    }
-
-    .who button {
-        order: 2;
-    } */
-
     /* what we do */
     .what_item {
         width: 30%;
@@ -661,19 +680,83 @@ main {
         height: 30vh;
     }
 
+    /* our creative team */
+
+    .arrow1,
+    .arrow2 {
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+    }
+
+    .arrow1 {
+        border-right: 30px solid rgb(66, 66, 64);
+    }
+
+    .arrow2 {
+        border-left: 30px solid rgb(66, 66, 64);
+    }
+
+    .team_item1,
+    .team_item2,
+    .team_item3 {
+        position: relative;
+        display: block;
+        opacity: 0.6;
+    }
+
+    .team::before {
+        width: 20vw;
+        height: 20vw;
+    }
+
+    .team {
+        display: block;
+        width: 10vw;
+        height: 10vw;
+        padding: 0;
+    }
+
+    .team_h1 {
+        bottom: 1.5vh;
+        width: 10vw;
+        height: 4vh;
+    }
+
+    .team_h3 {
+        width: 8vw;
+        height: 2.5vh;
+    }
+
+    .active_img {
+        opacity: 1;
+        z-index: 1;
+        order: 1;
+    }
+
+    .active_img .team {
+        width: 15vw;
+        height: 15vw;
+    }
+
+    .first {
+        order: 0;
+    }
+
+    .third {
+        order: 2;
+    }
+
     /* what client says */
 
-
-    .client_main_img::before {
-        width: 30vw;
-        height: 30vw;
-        transform: rotate(-45deg) translateY(-25%);
+    .client_main_container {
+        margin: 0;
+        width: 15vw;
+        height: 15vw;
     }
 
     .client_main_img {
-        width: 15vw;
-        height: 15vw;
-        margin: 10px;
+        width: 25vw;
+        height: 25vw;
     }
 
     .client_container span {
