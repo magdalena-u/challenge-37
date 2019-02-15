@@ -1,6 +1,18 @@
 const menu = document.querySelector('.nav_label');
 const navCont = document.querySelector('.nav_content');
 
+// search label
+
+const loop = document.querySelector('.fa-search');
+const label = document.querySelector('form input');
+const search = document.querySelector('.search');
+
+
+loop.addEventListener('click', function () {
+    search.classList.toggle('active_search')
+    label.classList.toggle('active_label')
+})
+
 /*our creative team */
 
 const leftArr = document.querySelector('.arrow1');

@@ -335,10 +335,10 @@ main {
 .team::before {
     content: "";
     display: block;
-    width: 50vw;
-    height: 50vw;
+    width: 150%;
+    height: 150%;
     background-size: cover;
-    transform: rotate(-45deg) translateY(-90px);
+    transform: rotate(-45deg) translateY(-25%);
 }
 
 .team_item1 .team::before {
@@ -354,6 +354,7 @@ main {
 }
 
 .team {
+    position: relative;
     width: 25vw;
     height: 25vw;
     border: solid 10px #fff;
@@ -441,6 +442,7 @@ main {
 .client_img1,
 .client_img2,
 .client_img3 {
+    position: relative;
     width: 10vw;
     height: 10vw;
     border: solid 5px #fff;
@@ -457,10 +459,10 @@ main {
 .client_img3::before {
     content: "";
     display: block;
-    width: 15vw;
-    height: 15vw;
+    width: 150%;
+    height: 150%;
     background-size: cover;
-    transform: rotate(-45deg) translateY(-20px);
+    transform: rotate(-45deg) translateY(-25%);
 }
 
 
@@ -608,10 +610,59 @@ main {
         display: block;
     }
 
+    .nav_content li {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .nav_content li::after {
+        content: "";
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background-color: #fff;
+        left: -100%;
+        bottom: 0;
+        transition: 0.2s;
+    }
+
+    .nav_content li:hover::after {
+        left: 0;
+    }
+
     .nav_content ul {
         display: flex;
         justify-content: space-around;
         list-style: none;
+    }
+
+    /* search */
+    .search {
+        position: relative;
+        overflow: hidden;
+        width: 15vw;
+        display: none;
+    }
+
+    form input {
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        border: none;
+        border-radius: 10px;
+        width: 15vw;
+        line-height: 1.6em;
+        transform: translateY(-50%);
+        transition: 1s;
+        /* color: white; */
+    }
+
+    .active_search {
+        display: block;
+    }
+
+    .active_label {
+        left: 0;
     }
 
     /* main content */
@@ -733,11 +784,6 @@ main {
         opacity: 0.6;
     }
 
-    .team::before {
-        width: 25vw;
-        height: 25vw;
-    }
-
     .team {
         display: block;
         width: 10vw;
@@ -846,10 +892,11 @@ main {
 
 
     .contact_icon {
-        font-size: 1.6em;
+        font-size: 2em;
         width: 40vw;
         margin: 0 auto;
         margin-bottom: 2em;
+        cursor: pointer;
     }
 }
 
