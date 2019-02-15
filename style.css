@@ -30,6 +30,10 @@ button:hover {
     background-color: rgb(100, 36, 45);
 }
 
+button a {
+    color: white;
+}
+
 h1,
 h3 {
     color: rgb(73, 73, 73);
@@ -44,6 +48,7 @@ h1 {
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 a:visited {
@@ -97,6 +102,26 @@ a:visited {
     flex-direction: column;
     background-color: #fff;
     height: 100vh;
+}
+
+/* search */
+.search {
+    position: relative;
+    overflow: hidden;
+    width: 15vw;
+}
+
+form input {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    border: none;
+    border-radius: 10px;
+    width: 80vw;
+    line-height: 1.6em;
+    transform: translateY(-50%);
+    background-color: rgb(73, 73, 73);
+    color: white;
 }
 
 /* main content */
@@ -653,8 +678,6 @@ main {
         width: 15vw;
         line-height: 1.6em;
         transform: translateY(-50%);
-        transition: 1s;
-        /* color: white; */
     }
 
     .active_search {
